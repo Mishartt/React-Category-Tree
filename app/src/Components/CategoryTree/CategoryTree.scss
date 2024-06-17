@@ -1,0 +1,155 @@
+@import '../../app.scss';
+
+.category-tree{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    padding: 15px;
+
+    h1{
+        margin-bottom: 50px;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+
+
+    .category-tree__container{
+        max-width: 500px;
+        min-height: 700px;
+        // border: 1px solid rgba(245, 245, 245, 0.1);
+        box-shadow: 0 0 2px 1px rgba(245, 245, 245, 0.1);
+        border-radius: 7px;
+        background-color: $background-color2;
+        padding: 15px;
+
+        .category-tree__item-title{
+            position: relative;
+        }
+
+        .category-tree__item-title-input{
+            min-width: 100px;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: whitesmoke;
+            font-size: 1em;
+        }
+
+        span{
+            cursor: pointer;
+            color: whitesmoke;
+        }
+    }
+
+}
+
+.category-tree__item{
+    margin: 15px 30px;
+    position: relative;
+    font-size: 17px;
+    
+    animation: appearance-anim-left 0.35s;
+
+    .category-tree__toggle-button{
+        position: absolute;
+        left: -20px;
+        transition: 0.1s;
+        img{
+            height: 15px;
+            width: 15px;
+            cursor: pointer;
+        }
+    }
+    
+
+    .category-tree__content{
+        display: flex;
+        position: relative;
+    }
+}
+
+
+.category-tree__manage-btn{
+ visibility: hidden;
+  margin-left: 15px;
+  cursor: pointer;
+  img{
+    height: 20px;
+    width: 20px;
+  }
+}
+
+.category-tree__manage-container{
+    position: absolute;
+    width: 150px;
+    border-radius: 5px;
+    background-color: $background-color3;
+    z-index: 5;
+    box-shadow: 0 0 10px 0px rgb(5, 5, 5);
+    right: -165px;
+
+    .category-tree__manage-close-btn{
+        position: absolute;
+        right: 7px;
+    }
+
+    .category-tree__manage-option{
+        width: 100%;
+        padding: 6px 12px;
+        text-align: center;
+        font-size: 0.9em;
+        cursor: pointer;
+
+        &:hover{
+            backdrop-filter: brightness(120%);
+        }
+    }
+    animation: appearance-anim-left 0.2s 1;
+}
+
+.category-tree__content:hover .category-tree__manage-btn{ 
+  visibility: visible;
+  animation: appearance-anim-left 0.3s 1;
+}
+
+#toggle-button_close{
+    transform: rotate(90deg);
+}
+
+
+
+@keyframes appearance-anim-left {
+    0%{
+        transform: translateX(-1px);
+        opacity: 0;
+    }
+}
+
+
+@media (min-width:550px) {
+    .category-tree__container{
+        width: 500px;
+    }
+    .category-tree__manage-close-btn{
+        visibility: hidden;
+    }
+}
+
+@media (max-width:550px) {
+    .category-tree{
+        padding: 0;
+    }
+    
+
+    .category-tree__manage-btn{
+        visibility: visible;        
+    }
+
+    .category-tree__container{
+        min-height: 100vh;
+        width: 100%;
+    }
+}

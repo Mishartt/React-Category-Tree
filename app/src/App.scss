@@ -1,0 +1,20 @@
+// @import url(https://fonts.googleapis.com/css?family=Nunito:200,300,regular,500,600,700,800,900,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Delius:regular);
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    // font-family: 'Nunito';
+    font-family: 'Delius';
+
+}
+
+
+$background-color:#0F0F0F;
+$background-color2:#141414;
+$background-color3:#242424;
+
+
+body{
+    background-color: $background-color;
+}
