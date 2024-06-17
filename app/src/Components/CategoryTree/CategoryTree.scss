@@ -8,6 +8,7 @@
     align-items: center;
     color: #ffffff;
     padding: 15px;
+    text-align: center;
 
     h1{
         margin-bottom: 50px;
@@ -24,6 +25,7 @@
         border-radius: 7px;
         background-color: $background-color2;
         padding: 15px;
+        position: relative;
 
         .category-tree__item-title{
             position: relative;
@@ -42,6 +44,36 @@
             cursor: pointer;
             color: whitesmoke;
         }
+
+        .category-tree-firebase{
+            position: absolute;
+            right: 8px;
+            bottom: 8px;
+            font-size: 0.8em;
+            cursor: pointer;
+
+            img{
+                width: 45px;
+                height: 45px;
+            }
+            
+            p{
+                min-width: 100px;
+                visibility: hidden;
+            }
+
+            transition: 0.5s;
+            &:hover{
+                p{
+                    visibility: visible;
+                    animation: appearance-anim-left 0.35s;
+                }
+
+                img{
+                    transform: scale(1.07);
+                  }
+            }
+        }
     }
 
 }
@@ -58,8 +90,9 @@
         left: -20px;
         transition: 0.1s;
         img{
-            height: 15px;
-            width: 15px;
+            
+            height: 18px;
+            width: 18px;
             cursor: pointer;
         }
     }
@@ -113,6 +146,8 @@
 .category-tree__content:hover .category-tree__manage-btn{ 
   visibility: visible;
   animation: appearance-anim-left 0.3s 1;
+
+ 
 }
 
 #toggle-button_close{

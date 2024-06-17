@@ -1,7 +1,8 @@
 import './CategoryTree.scss'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import CategoryItem from './CategoryItem'
 import { CategoryI } from '../../types'
+import SaveToFireBase from './SaveToFireBase'
 
 
 
@@ -41,24 +42,24 @@ const CategoryTree = () => {
             }
             ],
           },
-          {"id": 11,
-          "name": "Food",
-          "subcategories": [
-            {
-              "id": 12,
-              "name": "Meat",
-              "subcategories": [
-                {
-                  "id": 23,
-                  "name": "Beef",
-                },
-                {
-                  "id": 24,
-                  "name": "Chicken",
-                }
-              ]},
-           ]
-          }
+        //   {"id": 11,
+        //   "name": "Food",
+        //   "subcategories": [
+        //     {
+        //       "id": 12,
+        //       "name": "Meat",
+        //       "subcategories": [
+        //         {
+        //           "id": 23,
+        //           "name": "Beef",
+        //         },
+        //         {
+        //           "id": 24,
+        //           "name": "Chicken",
+        //         }
+        //       ]},
+        //    ]
+        //   }
         ]
       
       )
@@ -97,6 +98,7 @@ const CategoryTree = () => {
                       <br />
                     </>
                     )}
+                    <SaveToFireBase categories={categories}/>
             </div>
         </div>
     )
